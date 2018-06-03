@@ -392,7 +392,7 @@ buildLibVLC() {
     fi
 
     if [ "$SCARY" = "yes" ]; then
-        SCARYFLAG="--enable-dvbpsi --enable-avcodec --disable-vpx"
+        SCARYFLAG="--enable-dvbpsi --enable-avcodec"
     else
         SCARYFLAG="--disable-dca --disable-dvbpsi --disable-avcodec --disable-avformat --disable-zvbi --enable-vpx"
     fi
@@ -528,7 +528,6 @@ buildLibVLC() {
     visual
     fb
     aout_file
-    dummy
     invert
     sepia
     wave
@@ -1042,8 +1041,8 @@ if [ "$VLCROOT" = "" ]; then
             cd ..
         else
             cd vlc
-            git reset --hard ${TESTEDHASH}
             git pull --rebase
+            git reset --hard ${TESTEDHASH}
             git am ${ROOT_DIR}/Resources/MobileVLCKit/patches/*.patch
             cd ..
         fi

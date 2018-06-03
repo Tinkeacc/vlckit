@@ -79,7 +79,8 @@
  */
 @property (readonly) NSString * stringValue;
 /**
- * the current time value as verbose string value localized for the current environment
+ * the current time value as verbose localized string
+ * examples: 17 minutes 1 second, 1 Stunde 33 Minuten und 41 Sekunden
  * \return the NSString object
  */
 @property (readonly) NSString * verboseStringValue;
